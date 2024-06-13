@@ -1,12 +1,34 @@
 Package: phylopairs
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Phylogenetically informed comparative analyses of lineage-pair traits.
+Version: 0.1.0
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Sean", "A.", "S.", "Anderson", , "sean.as.anderson@gmail.com", role = c("aut", "cre"))
+Description: Facilitates the testing of causal relationships between continuous 
+	variables where the variables are attributes of lineage pairs, not of individual 
+	taxa. Examples of such attributes include the strength of reproductive isolation, 
+	range overlap, competition coefficient, diet niche similarity, and relative hybrid 
+	fitness. Users supply a lineage-pair dataset and a phylogeny. `phylopairs` 
+	calculates a covariance matrix for the pairwise-defined data and provides built-in 
+	models to test for relationships among variables while taking this covariance into 
+	account. Bayesian analyses are run in `Stan` via the `rstan` package.
+License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
+Biarch: true
+Depends: 
+    R (>= 3.5.0)
+Imports: 
+    methods,
+    Rcpp (>= 0.12.0),
+    RcppParallel (>= 5.0.1),
+    rstan (>= 2.18.1),
+    rstantools (>= 2.4.0)
+LinkingTo: 
+    BH (>= 1.66.0),
+    Rcpp (>= 0.12.0),
+    RcppEigen (>= 0.3.3.3.0),
+    RcppParallel (>= 5.0.1),
+    rstan (>= 2.18.1),
+    StanHeaders (>= 2.18.0)
+SystemRequirements: GNU make

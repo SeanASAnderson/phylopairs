@@ -1,0 +1,11 @@
+betareg_stan            betareg_stan
+data1                   Simulated Dataset 1
+data2                   Simulated Dataset 2
+data3                   Simulated Dataset 3
+data4                   Simulated Dataset 4
+data5                   Simulated Dataset 5
+data6                   Simulated Dataset 6
+data7                   Simulated Dataset 7
+data8                   Simulated Dataset 8
+phylopairs-package      The 'phylopairs' package.
+sim.cov.pairs           Simulated lineage-pair covariance matrix

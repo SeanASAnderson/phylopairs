@@ -1,0 +1,176 @@
+* installing *source* package ‘phylopairs’ ...
+** using staged installation
+** libs
+using C++ compiler: ‘Apple clang version 14.0.3 (clang-1403.0.22.14.1)’
+using C++17
+using SDK: ‘MacOSX13.3.sdk’
+
+
+clang++ -arch x86_64 -std=gnu++17 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG -I"../inst/include" -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/src" -DBOOST_DISABLE_ASSERTS -DEIGEN_NO_DEBUG -DBOOST_MATH_OVERFLOW_ERROR_POLICY=errno_on_error -DUSE_STANC3 -D_HAS_AUTO_PTR_ETC=0 -I'/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/BH/include' -I'/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/Rcpp/include' -I'/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include' -I'/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppParallel/include' -I'/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include' -I'/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include' -I/opt/R/x86_64/include    -I'/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppParallel/include' -D_REENTRANT -DSTAN_THREADS   -fPIC  -falign-functions=64 -Wall -g -O2   -c RcppExports.cpp -o RcppExports.o
+In file included from RcppExports.cpp:4:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/RcppEigen.h:25:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/RcppEigenForward.h:29:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/Sparse:26:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/SparseCore:61:
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/src/SparseCore/TriangularSolver.h:273:13: warning: variable 'count' set but not used [-Wunused-but-set-variable]
+      Index count = 0;
+            ^
+In file included from RcppExports.cpp:4:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/RcppEigen.h:25:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/RcppEigenForward.h:29:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/Sparse:29:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/SparseLU:35:
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h:78:9: warning: variable 'nsuper_et_post' set but not used [-Wunused-but-set-variable]
+  Index nsuper_et_post = 0; // Number of relaxed snodes in postordered etree 
+        ^
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h:79:9: warning: variable 'nsuper_et' set but not used [-Wunused-but-set-variable]
+  Index nsuper_et = 0; // Number of relaxed snodes in the original etree 
+        ^
+In file included from RcppExports.cpp:4:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/RcppEigen.h:25:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/RcppEigenForward.h:31:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/unsupported/Eigen/IterativeSolvers:46:
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/unsupported/Eigen/src/IterativeSolvers/IDRS.h:72:10: warning: variable 'replacements' set but not used [-Wunused-but-set-variable]
+                        Index replacements = 0;
+                              ^
+In file included from RcppExports.cpp:4:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/RcppEigen.h:25:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/RcppEigenForward.h:37:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/unsupported/Eigen/SparseExtra:45:
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/unsupported/Eigen/src/SparseExtra/MarketIO.h:246:7: warning: variable 'count' set but not used [-Wunused-but-set-variable]
+  int count = 0;
+      ^
+5 warnings generated.
+
+
+clang++ -arch x86_64 -std=gnu++17 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG -I"../inst/include" -I"/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/src" -DBOOST_DISABLE_ASSERTS -DEIGEN_NO_DEBUG -DBOOST_MATH_OVERFLOW_ERROR_POLICY=errno_on_error -DUSE_STANC3 -D_HAS_AUTO_PTR_ETC=0 -I'/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/BH/include' -I'/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/Rcpp/include' -I'/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include' -I'/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppParallel/include' -I'/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include' -I'/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include' -I/opt/R/x86_64/include    -I'/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppParallel/include' -D_REENTRANT -DSTAN_THREADS   -fPIC  -falign-functions=64 -Wall -g -O2   -c stanExports_betareg.cc -o stanExports_betareg.o
+In file included from stanExports_betareg.cc:5:
+In file included from ./stanExports_betareg.h:23:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/rstaninc.hpp:3:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/stan/math/prim/fun/Eigen.hpp:23:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/Sparse:26:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/SparseCore:61:
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/src/SparseCore/TriangularSolver.h:273:13: warning: variable 'count' set but not used [-Wunused-but-set-variable]
+      Index count = 0;
+            ^
+In file included from stanExports_betareg.cc:5:
+In file included from ./stanExports_betareg.h:23:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/rstaninc.hpp:3:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/stan/math/prim/fun/Eigen.hpp:23:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/Sparse:29:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/SparseLU:35:
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h:78:9: warning: variable 'nsuper_et_post' set but not used [-Wunused-but-set-variable]
+  Index nsuper_et_post = 0; // Number of relaxed snodes in postordered etree 
+        ^
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h:79:9: warning: variable 'nsuper_et' set but not used [-Wunused-but-set-variable]
+  Index nsuper_et = 0; // Number of relaxed snodes in the original etree 
+        ^
+In file included from stanExports_betareg.cc:5:
+In file included from ./stanExports_betareg.h:23:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/rstaninc.hpp:4:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/stan_fit.hpp:21:
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/io/r_ostream.hpp:47:31: warning: 'rstan::io::r_cout_streambuf::xsputn' hides overloaded virtual function [-Woverloaded-virtual]
+      virtual std::streamsize xsputn(const char_type* s, int n) {
+                              ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/streambuf:294:24: note: hidden overloaded virtual function 'std::basic_streambuf<char>::xsputn' declared here: type mismatch at 2nd parameter ('std::streamsize' (aka 'long') vs 'int')
+    virtual streamsize xsputn(const char_type* __s, streamsize __n);
+                       ^
+In file included from stanExports_betareg.cc:5:
+In file included from ./stanExports_betareg.h:23:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/rstaninc.hpp:4:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/stan_fit.hpp:21:
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/io/r_ostream.hpp:70:31: warning: 'rstan::io::r_cerr_streambuf::xsputn' hides overloaded virtual function [-Woverloaded-virtual]
+      virtual std::streamsize xsputn(const char_type* s, int n) {
+                              ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/streambuf:294:24: note: hidden overloaded virtual function 'std::basic_streambuf<char>::xsputn' declared here: type mismatch at 2nd parameter ('std::streamsize' (aka 'long') vs 'int')
+    virtual streamsize xsputn(const char_type* __s, streamsize __n);
+                       ^
+In file included from stanExports_betareg.cc:5:
+In file included from ./stanExports_betareg.h:23:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/rstaninc.hpp:4:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/stan_fit.hpp:31:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/RcppEigen.h:25:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/RcppEigenForward.h:31:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/unsupported/Eigen/IterativeSolvers:46:
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/unsupported/Eigen/src/IterativeSolvers/IDRS.h:72:10: warning: variable 'replacements' set but not used [-Wunused-but-set-variable]
+                        Index replacements = 0;
+                              ^
+In file included from stanExports_betareg.cc:5:
+In file included from ./stanExports_betareg.h:23:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/rstaninc.hpp:4:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/stan_fit.hpp:31:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/RcppEigen.h:25:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/RcppEigenForward.h:37:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/unsupported/Eigen/SparseExtra:45:
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppEigen/include/unsupported/Eigen/src/SparseExtra/MarketIO.h:246:7: warning: variable 'count' set but not used [-Wunused-but-set-variable]
+  int count = 0;
+      ^
+In file included from stanExports_betareg.cc:5:
+In file included from ./stanExports_betareg.h:23:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/rstaninc.hpp:4:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/stan_fit.hpp:43:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/src/stan/io/dump.hpp:7:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/stan/math/prim.hpp:14:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/stan/math/prim/fun.hpp:35:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/stan/math/prim/fun/binomial_coefficient_log.hpp:13:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/stan/math/prim/functor/partials_propagator.hpp:8:
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/stan/math/prim/functor/operands_and_partials.hpp:57:1: warning: 'ops_partials_edge' defined as a struct template here but previously declared as a class template; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+struct ops_partials_edge<ViewElt, Op, require_st_arithmetic<Op>> {
+^
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/stan/math/prim/functor/operands_and_partials.hpp:45:1: note: did you mean struct here?
+class ops_partials_edge;
+^~~~~
+struct
+In file included from stanExports_betareg.cc:5:
+In file included from ./stanExports_betareg.h:23:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/rstaninc.hpp:4:
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/stan_fit.hpp:1252:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+    int ret = stan::services::error_codes::CONFIG;
+        ^
+In file included from stanExports_betareg.cc:5:
+./stanExports_betareg.h:428:11: warning: variable 'pos__' set but not used [-Wunused-but-set-variable]
+      int pos__ = std::numeric_limits<int>::min();
+          ^
+In file included from stanExports_betareg.cc:5:
+In file included from ./stanExports_betareg.h:23:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/rstaninc.hpp:4:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rstan/include/rstan/stan_fit.hpp:43:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/src/stan/io/dump.hpp:7:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/stan/math/prim.hpp:14:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/stan/math/prim/fun.hpp:46:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/stan/math/prim/fun/choose.hpp:7:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/BH/include/boost/math/special_functions/binomial.hpp:15:
+In file included from /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/BH/include/boost/math/special_functions/beta.hpp:1721:
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/BH/include/boost/math/special_functions/detail/ibeta_inverse.hpp:29:15: warning: unused variable 'x_extrema' [-Wunused-variable]
+      const T x_extrema = 1 / (1 + a);
+              ^
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/BH/include/boost/math/special_functions/detail/ibeta_inverse.hpp:304:7: note: in instantiation of member function 'boost::math::detail::temme_root_finder<double>::temme_root_finder' requested here
+      temme_root_finder<T>(-lu, alpha), x, lower, upper, policies::digits<T, Policy>() / 2);
+      ^
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/BH/include/boost/math/special_functions/detail/ibeta_inverse.hpp:615:20: note: in instantiation of function template specialization 'boost::math::detail::temme_method_2_ibeta_inverse<double, boost::math::policies::policy<boost::math::policies::pole_error<boost::math::policies::errno_on_error>, boost::math::policies::promote_float<false>, boost::math::policies::promote_double<false>>>' requested here
+               x = temme_method_2_ibeta_inverse(a, b, p, r, theta, pol);
+                   ^
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/BH/include/boost/math/special_functions/detail/ibeta_inverse.hpp:992:17: note: in instantiation of function template specialization 'boost::math::detail::ibeta_inv_imp<double, boost::math::policies::policy<boost::math::policies::pole_error<boost::math::policies::errno_on_error>, boost::math::policies::promote_float<false>, boost::math::policies::promote_double<false>>>' requested here
+   rx = detail::ibeta_inv_imp(
+                ^
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/BH/include/boost/math/special_functions/detail/ibeta_inverse.hpp:1023:11: note: in instantiation of function template specialization 'boost::math::ibeta_inv<double, double, double, double, boost::math::policies::policy<boost::math::policies::overflow_error<boost::math::policies::errno_on_error>, boost::math::policies::pole_error<boost::math::policies::errno_on_error>, boost::math::policies::promote_double<false>, boost::math::policies::digits2<0>>>' requested here
+   return ibeta_inv(a, b, p, static_cast<result_type*>(nullptr), pol);
+          ^
+/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/StanHeaders/include/stan/math/prim/fun/inv_inc_beta.hpp:32:23: note: in instantiation of function template specialization 'boost::math::ibeta_inv<double, double, double, boost::math::policies::policy<boost::math::policies::overflow_error<boost::math::policies::errno_on_error>, boost::math::policies::pole_error<boost::math::policies::errno_on_error>, boost::math::policies::promote_double<false>, boost::math::policies::digits2<0>>>' requested here
+  return boost::math::ibeta_inv(a, b, p, boost_policy_t<>());
+                      ^
+11 warnings generated.
+clang++ -arch x86_64 -std=gnu++17 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/Library/Frameworks/R.framework/Resources/lib -L/opt/R/x86_64/lib -o phylopairs.so RcppExports.o stanExports_betareg.o -L/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppParallel/lib/ -Wl,-rpath,/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/RcppParallel/lib/ -ltbb -ltbbmalloc -F/Library/Frameworks/R.framework/.. -framework R -Wl,-framework -Wl,CoreFoundation
+installing to /Users/Sean_1/Desktop/MatutePostdoc/postdoc.projects/pairwise.phylo/phylopairs2/phylopairs.Rcheck/00LOCK-phylopairs/00new/phylopairs/libs
+** R
+** data
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (phylopairs)

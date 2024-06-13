@@ -1,0 +1,245 @@
+* using log directory ‘/Users/Sean_1/Desktop/MatutePostdoc/postdoc.projects/pairwise.phylo/phylopairs2/phylopairs.Rcheck’
+* using R version 4.4.0 (2024-04-24)
+* using platform: x86_64-apple-darwin20
+* R was compiled by
+    Apple clang version 14.0.0 (clang-1400.0.29.202)
+    GNU Fortran (GCC) 12.2.0
+* running under: macOS Ventura 13.0
+* using session charset: UTF-8
+* using option ‘--as-cran’
+* checking for file ‘phylopairs/DESCRIPTION’ ... OK
+* this is package ‘phylopairs’ version ‘0.0.0.9000’
+* package encoding: UTF-8
+* checking CRAN incoming feasibility ... [2s/12s] NOTE
+Maintainer: ‘First Last <first.last@example.com>’
+
+New submission
+
+Version contains large components (0.0.0.9000)
+
+Non-FOSS package license (`use_mit_license()`, `use_gpl3_license()` or friends to pick a
+license)
+
+DESCRIPTION fields with placeholder content:
+  Title: what the package does (one line, title case)
+  Description: what the package does (one paragraph).
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... WARNING
+Found the following file with a non-portable file name:
+  inst/scripts/simulations.script (Autosaved).R
+These are not fully portable file names.
+See section ‘Package structure’ in the ‘Writing R Extensions’ manual.
+* checking for sufficient/correct file permissions ... OK
+* checking whether package ‘phylopairs’ can be installed ... [42s/44s] OK
+* used C++ compiler: ‘Apple clang version 14.0.3 (clang-1403.0.22.14.1)’
+* used SDK: ‘MacOSX13.3.sdk’
+* checking C++ specification ... OK
+  Not all R platforms support C++17
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking DESCRIPTION meta-information ... WARNING
+Non-standard license specification:
+  `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+  license
+Standardizable: FALSE
+Authors@R field gives persons with invalid ORCID identifiers:
+  First Last <first.last@example.com> [aut, cre] (YOUR-ORCID-ID)
+* checking top-level files ... WARNING
+A complete check needs the 'checkbashisms' script.
+See section ‘Configure and cleanup’ in the ‘Writing R Extensions’
+manual.
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking code files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking use of S3 registration ... OK
+* checking dependencies in R code ... WARNING
+'::' or ':::' import not declared from: ‘loo’
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... [12s/12s] OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... NOTE
+Rd file 'betareg_stan.Rd':
+  \examples lines wider than 100 characters:
+     ## Example 2: Fit beta regression models to a simulated dataset in which the data are non-independent
+
+These lines will be truncated in the PDF manual.
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... WARNING
+Variables with usage in Rd file 'data1.Rd' but not in code:
+  ‘data1’
+
+Variables with usage in Rd file 'data2.Rd' but not in code:
+  ‘data2’
+
+Variables with usage in Rd file 'data3.Rd' but not in code:
+  ‘data3’
+
+Variables with usage in Rd file 'data4.Rd' but not in code:
+  ‘data4’
+
+Variables with usage in Rd file 'data5.Rd' but not in code:
+  ‘data5’
+
+Variables with usage in Rd file 'data6.Rd' but not in code:
+  ‘data6’
+
+Variables with usage in Rd file 'data7.Rd' but not in code:
+  ‘data7’
+
+Variables with usage in Rd file 'data8.Rd' but not in code:
+  ‘data8’
+
+Variables with usage in Rd file 'sim.cov.pairs.Rd' but not in code:
+  ‘sim.cov.pairs’
+
+* checking Rd \usage sections ... WARNING
+Undocumented arguments in Rd file 'betareg_stan.Rd'
+  ‘link’ ‘covmat’
+Documented arguments not in \usage in Rd file 'betareg_stan.Rd':
+  ‘cov’
+
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
+See chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... WARNING
+'::' or ':::' import not declared from: ‘loo’
+* checking contents of ‘data’ directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking line endings in shell scripts ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking line endings in Makefiles ... OK
+* checking compilation flags in Makevars ... OK
+* checking for GNU extensions in Makefiles ... NOTE
+GNU make is a SystemRequirements.
+* checking for portable use of $(BLAS_LIBS) and $(LAPACK_LIBS) ... OK
+* checking use of PKG_*FLAGS in Makefiles ... OK
+* checking use of SHLIB_OPENMP_*FLAGS in Makefiles ... OK
+* checking pragmas in C/C++ headers and code ... OK
+* checking compilation flags used ... OK
+* checking compiled code ... OK
+* checking examples ... ERROR
+Running examples in ‘phylopairs-Ex.R’ failed
+The error most likely occurred in:
+
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: betareg_stan
+> ### Title: betareg_stan
+> ### Aliases: betareg_stan
+> 
+> ### ** Examples
+> 
+> ## Example 1: Fit beta regression models with different link functions to independent data
+> # Load a data simulated with a logit link function
+> data(data5)
+> # Run the betareg function
+> result1 = betareg_stan(des=data5[,1], y=data5[,2], itnum=1000)
+Error in .check_ncores(cores) : 4 simultaneous processes spawned
+Calls: betareg_stan ... sampling -> sampling -> .local -> <Anonymous> -> .check_ncores
+Execution halted
+* checking PDF version of manual ... OK
+* checking HTML version of manual ... NOTE
+Found the following HTML validation problems:
+betareg_stan.html:15:44 (betareg_stan.Rd:5): Error: <main> is not recognized!
+betareg_stan.html:15:44 (betareg_stan.Rd:5): Warning: discarding unexpected <main>
+betareg_stan.html:162:1 (betareg_stan.Rd:102): Warning: discarding unexpected </main>
+betareg_stan.html:4:1 (betareg_stan.Rd:5): Warning: <link> inserting "type" attribute
+betareg_stan.html:12:1 (betareg_stan.Rd:5): Warning: <script> proprietary attribute "onload"
+betareg_stan.html:12:1 (betareg_stan.Rd:5): Warning: <script> inserting "type" attribute
+betareg_stan.html:17:1 (betareg_stan.Rd:5): Warning: <table> lacks "summary" attribute
+betareg_stan.html:50:1 (betareg_stan.Rd:25): Warning: <table> lacks "summary" attribute
+betareg_stan.html:95:14 (betareg_stan.Rd:47): Warning: <code> attribute "id" has invalid value "..."
+data1.html:15:44 (data1.Rd:6): Error: <main> is not recognized!
+data1.html:15:44 (data1.Rd:6): Warning: discarding unexpected <main>
+data1.html:52:1 (data1.Rd:15): Warning: discarding unexpected </main>
+data1.html:4:1 (data1.Rd:6): Warning: <link> inserting "type" attribute
+data1.html:12:1 (data1.Rd:6): Warning: <script> proprietary attribute "onload"
+data1.html:12:1 (data1.Rd:6): Warning: <script> inserting "type" attribute
+data1.html:17:1 (data1.Rd:6): Warning: <table> lacks "summary" attribute
+data2.html:15:44 (data2.Rd:6): Error: <main> is not recognized!
+data2.html:15:44 (data2.Rd:6): Warning: discarding unexpected <main>
+data2.html:52:1 (data2.Rd:15): Warning: discarding unexpected </main>
+data2.html:4:1 (data2.Rd:6): Warning: <link> inserting "type" attribute
+data2.html:12:1 (data2.Rd:6): Warning: <script> proprietary attribute "onload"
+data2.html:12:1 (data2.Rd:6): Warning: <script> inserting "type" attribute
+data2.html:17:1 (data2.Rd:6): Warning: <table> lacks "summary" attribute
+data3.html:15:44 (data3.Rd:6): Error: <main> is not recognized!
+data3.html:15:44 (data3.Rd:6): Warning: discarding unexpected <main>
+data3.html:52:1 (data3.Rd:15): Warning: discarding unexpected </main>
+data3.html:4:1 (data3.Rd:6): Warning: <link> inserting "type" attribute
+data3.html:12:1 (data3.Rd:6): Warning: <script> proprietary attribute "onload"
+data3.html:12:1 (data3.Rd:6): Warning: <script> inserting "type" attribute
+data3.html:17:1 (data3.Rd:6): Warning: <table> lacks "summary" attribute
+data4.html:15:44 (data4.Rd:6): Error: <main> is not recognized!
+data4.html:15:44 (data4.Rd:6): Warning: discarding unexpected <main>
+data4.html:52:1 (data4.Rd:15): Warning: discarding unexpected </main>
+data4.html:4:1 (data4.Rd:6): Warning: <link> inserting "type" attribute
+data4.html:12:1 (data4.Rd:6): Warning: <script> proprietary attribute "onload"
+data4.html:12:1 (data4.Rd:6): Warning: <script> inserting "type" attribute
+data4.html:17:1 (data4.Rd:6): Warning: <table> lacks "summary" attribute
+data5.html:15:44 (data5.Rd:6): Error: <main> is not recognized!
+data5.html:15:44 (data5.Rd:6): Warning: discarding unexpected <main>
+data5.html:52:1 (data5.Rd:15): Warning: discarding unexpected </main>
+data5.html:4:1 (data5.Rd:6): Warning: <link> inserting "type" attribute
+data5.html:12:1 (data5.Rd:6): Warning: <script> proprietary attribute "onload"
+data5.html:12:1 (data5.Rd:6): Warning: <script> inserting "type" attribute
+data5.html:17:1 (data5.Rd:6): Warning: <table> lacks "summary" attribute
+data6.html:15:44 (data6.Rd:6): Error: <main> is not recognized!
+data6.html:15:44 (data6.Rd:6): Warning: discarding unexpected <main>
+data6.html:52:1 (data6.Rd:15): Warning: discarding unexpected </main>
+data6.html:4:1 (data6.Rd:6): Warning: <link> inserting "type" attribute
+data6.html:12:1 (data6.Rd:6): Warning: <script> proprietary attribute "onload"
+data6.html:12:1 (data6.Rd:6): Warning: <script> inserting "type" attribute
+data6.html:17:1 (data6.Rd:6): Warning: <table> lacks "summary" attribute
+data7.html:15:44 (data7.Rd:6): Error: <main> is not recognized!
+data7.html:15:44 (data7.Rd:6): Warning: discarding unexpected <main>
+data7.html:52:1 (data7.Rd:15): Warning: discarding unexpected </main>
+data7.html:4:1 (data7.Rd:6): Warning: <link> inserting "type" attribute
+data7.html:12:1 (data7.Rd:6): Warning: <script> proprietary attribute "onload"
+data7.html:12:1 (data7.Rd:6): Warning: <script> inserting "type" attribute
+data7.html:17:1 (data7.Rd:6): Warning: <table> lacks "summary" attribute
+data8.html:15:44 (data8.Rd:6): Error: <main> is not recognized!
+data8.html:15:44 (data8.Rd:6): Warning: discarding unexpected <main>
+data8.html:52:1 (data8.Rd:15): Warning: discarding unexpected </main>
+data8.html:4:1 (data8.Rd:6): Warning: <link> inserting "type" attribute
+data8.html:12:1 (data8.Rd:6): Warning: <script> proprietary attribute "onload"
+data8.html:12:1 (data8.Rd:6): Warning: <script> inserting "type" attribute
+data8.html:17:1 (data8.Rd:6): Warning: <table> lacks "summary" attribute
+phylopairs-package.html:15:44 (phylopairs-package.Rd:7): Error: <main> is not recognized!
+phylopairs-package.html:15:44 (phylopairs-package.Rd:7): Warning: discarding unexpected <main>
+phylopairs-package.html:38:1 (phylopairs-package.Rd:12): Warning: discarding unexpected </main>
+phylopairs-package.html:4:1 (phylopairs-package.Rd:7): Warning: <link> inserting "type" attribute
+phylopairs-package.html:12:1 (phylopairs-package.Rd:7): Warning: <script> proprietary attribute "onload"
+phylopairs-package.html:12:1 (phylopairs-package.Rd:7): Warning: <script> inserting "type" attribute
+phylopairs-package.html:17:1 (phylopairs-package.Rd:7): Warning: <table> lacks "summary" attribute
+sim.cov.pairs.html:15:44 (sim.cov.pairs.Rd:6): Error: <main> is not recognized!
+sim.cov.pairs.html:15:44 (sim.cov.pairs.Rd:6): Warning: discarding unexpected <main>
+sim.cov.pairs.html:44:1 (sim.cov.pairs.Rd:11): Warning: discarding unexpected </main>
+sim.cov.pairs.html:4:1 (sim.cov.pairs.Rd:6): Warning: <link> inserting "type" attribute
+sim.cov.pairs.html:12:1 (sim.cov.pairs.Rd:6): Warning: <script> proprietary attribute "onload"
+sim.cov.pairs.html:12:1 (sim.cov.pairs.Rd:6): Warning: <script> inserting "type" attribute
+sim.cov.pairs.html:17:1 (sim.cov.pairs.Rd:6): Warning: <table> lacks "summary" attribute
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
+* DONE
+Status: 1 ERROR, 7 WARNINGs, 4 NOTEs
