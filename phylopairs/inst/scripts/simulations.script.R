@@ -82,9 +82,10 @@ data5 = cbind(pred, beta.linnocov)
 data6 = cbind(pred, beta.zeronocov)
 data7 = cbind(pred, beta.lincov)
 data8 = cbind(pred, beta.zerocov)
+dir.create("data")
 for(i in 1:8) save(list=paste0("data", i), file=paste0("data/", paste0("data", i), ".rda"))
 sim.cov.pairs=cov.pairs
-save(sim.cov.pairs, file="sim.cov.pairs")
+save(sim.cov.pairs, file="data/sim.cov.pairs.rda")
 
 
 

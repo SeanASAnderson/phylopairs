@@ -19,17 +19,17 @@ data {
 parameters {
   // note: while the beta distribution is defined by phi and mu, mu is calculated from the linear predictor in a beta regression
   // therefore, mu is defined in the model block and not in the parameters blcok 
-  vector[K] Beta; // coefficient vector to be estimated
+  vector[K] Coef; // coefficient vector to be estimated
   real<lower=0> phi; // precision parameter for beta distribution
 }
 
 model {
   // Priors
-  Beta ~ normal(0, 10); // Weakly informative priors for each coefficient
-  phi ~ gamma(0.01, 0.01);
+  Coef ~ normal(coef_mean, coef_sd); // Weakly informative priors for each coefficient
+  phi ~ gamma(phi_shape, phi_rate);
 
   // Calculate the linear predictor
-  vector[N] eta = X*Beta;
+  vector[N] eta = X*Coef;
 
   // Calculate the predicted values, mu, based on the link function
   vector[N] mu; // Mean of the Beta distribution
@@ -50,11 +50,25 @@ model {
 }
 
 generated quantities {
-  vector[N] loglik = rep_vector(0.0, N); 
-  vector[N] mu = inv_logit(X * Beta);
+  vector[N] loglik; 
+  vector[N] mu; // Mean of the Beta distribution
+
+  // Calculate the predicted values based on the link function
+  if (link_choice == 1) {
+    mu = inv_logit(X * Coef);  // logit link
+  } else if (link_choice == 2) {
+    for (n in 1:N) {
+      mu[n] = normal_cdf(X[n] * Coef, 0, 1);  // probit link
+    }
+  } else if (link_choice == 3) {
+    mu = 1 - exp(-exp(X * Coef));  // cloglog link
+  } else if (link_choice == 4) {
+    mu = exp(-exp(-(X * Coef)));  // loglog link
+  }
 
   // Calculate log likelihood in a vectorized manner
   for (n in 1:N) {
     loglik[n] = beta_lpdf(Y[n] | mu[n] * phi, (1 - mu[n]) * phi);
   }
 }
+

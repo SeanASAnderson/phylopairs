@@ -9,14 +9,14 @@ betareg_stan(
   y,
   link = "logit",
   covmat = NULL,
-  itnum = 6000,
+  iter = 6000,
   chains = 4,
   coef.u = 0,
   coef.sd = 10,
   phi.shape = 0.01,
   phi.rate = 0.01,
-  scale.u = -1,
-  scale.sd = 1,
+  physig.u = -1,
+  physig.sd = 1,
   cores = 4,
   ...
 )
@@ -26,7 +26,9 @@ betareg_stan(
 
 \item{y}{A vector of response variable observations.}
 
-\item{itnum}{Number of iterations to run on each chain; defaults to 6000.}
+\item{link}{The link function to be used. Default is "logit". Other possible choices are "probit", "cloglog" (complementary log-log), and "loglog".}
+
+\item{iter}{Number of iterations to run on each chain; defaults to 6000.}
 
 \item{chains}{Number of chains to run; defaults to 4.}
 
@@ -34,68 +36,85 @@ betareg_stan(
 
 \item{coef.sd}{SD of the Gaussian prior for each preditor variable coefficient; defaults to 10.}
 
-\item{phi.shape}{Shape parameter for gamma prior of beta distribution's phi parameter; defaults to 0.01.}
+\item{phi.shape}{Shape parameter for gamma prior of beta distribution's precision parameter (phi); defaults to 0.01.}
 
-\item{phi.rate}{Rate parameter for gamma prior of beta distribution's phi parameter; defaults to 0.01.}
+\item{phi.rate}{Rate parameter for gamma prior of beta distribution's precision parameter (phi); defaults to 0.01.}
 
-\item{scale.u}{Mean of the lognormal prior for the scale of the residual covariance; defaults to -1.}
+\item{physig.u}{Mean of the lognormal prior for the scale of the residual covariance; defaults to -1.}
 
-\item{scale.sd}{SD of the lognormal prior for the scale of the residual covariance; defaults to 1.}
+\item{physig.sd}{SD of the lognormal prior for the scale of the residual covariance; defaults to 1.}
 
 \item{cores}{Number of cores to be used; defaults to 4 (one chain per core).}
 
 \item{cov}{Covariance matrix for model residuals (a Cp matrix if analyzing lineage-pair data or a phylogenetic vcv matrix if analyzing bounded species data).}
 }
 \value{
-A list containing two elements: (1) the posterior distribution of beta model parameters, and (2) the log-likelihood of the posteriors for use in downstream analyses (e.g. the calculation of model fitting metrics like loo or waic)
+A list containing two elements: (1) the posterior distribution of beta parameters, and (2) the log-likelihood of the posteriors for use in downstream analyses (e.g. the calculation of model fitting metrics like loo or waic)
 }
 \description{
-The function \code{betareg_stan} fits one of two beta regression models to a dataset in the Stan Bayesian modeling framework via the 'rstan' package. Users can choose to fit either a standard model of beta regression or a beta-regression mixed model in which there are covarying residuals in the linear predictor. For the latter, users must supply a covariance matrix. In both models, users can choose one of four link functions.
+Fits one of two beta regression models to a dataset in a Bayesian
+framework using Stan software via the 'rstan' package. Response variable must be
+bounded between 0 and 1. Users can fit either (1) a basic beta regression model or a
+(2) beta mixed-effects model in which there are covarying random intercepts in the
+linear predictor. For the latter, users must supply a covariance matrix (the
+simpler beta regression model is otherwise run). In both models, users can choose
+one of four link functions. See details.
 }
+\details{
+The two models that can be chosen differ in terms of their linear predictor
+on the scale of the link function. These predictors are
+\enumerate{
+\item Simple beta regression: \code{g(u) = XB}
+\item Beta mixed-effects regression: \code{g(u) = XB + u, u~N(0, physig*C)}, where C is a
+lineage-pair covariance matrix (if analyzing lineage-pair data) or a
+phylogenetic vcv matrix (if analyzing species data) and physig is the sigma^2 scaling
+parameter for C.
+}
+
+NOTE: For model 2, the user must supply a covariance matrix.
+}
+\section{Prior Distributions for Model Parameters}{
+The underlying stan models assume the following prior distributions for model parameters
+\enumerate{
+\item Regression coefficients: Gaussian prior (users can set prior mean and sd)
+\item Precision parameter \code{phi}: gamma prior (users can set prior shape and rate of gamma)
+\item \code{physig}: lognormal prior (users can set prior mean and sd)
+}
+}
+
 \examples{
 ## Example 1: Fit beta regression models with different link functions to independent data
-# Load a data simulated with a logit link function
+# Load a dataset of independent response observations simulated with a logit link function
 data(data5)
+# Note: data were simulated with Coef[1]=1 (intercept), Coef[2]=0.8 (slope), phi=5
 # Run the betareg function
-result1 = betareg_stan(des=data5[,1], y=data5[,2], itnum=1000)
-# Observe posterior parameter estimates
+result1 = betareg_stan(des=data5[,1], y=data5[,2], iter=1000)
+# Fit the model again but this time use a probit link function
+result2 = betareg_stan(des=data5[,1], y=data5[,2], link="probit", iter=1000)
+# Compare posterior parameter estimates
 result1[[1]]
-# Fit the model again but this time without the covariance matrix
-result2 = betareg_stan(des=data5[,1], y=data5[,2], link="probit", itnum=1000)
-# Observe posterior parameter estimates
 result2[[1]]
-# Compare the fit of the two models via loo and waic
-loo1 = loo::loo(result1[[2]])
-loo2 = loo::loo(result2[[2]])
-waic1 = loo::waic(result1[[2]])
-waic2 = loo::waic(result2[[2]])
-loo1
-loo2
-waic1
-waic2
-loo::loo_compare(loo1, loo2)
-loo::loo_compare(waic1, waic2)
 ## Example 2: Fit beta regression models to a simulated dataset in which the data are non-independent
 \dontrun{
-# Also load the lineage-pair covariance matrix that arose from those simulations
+# Load a dataset of non-independent response observations simulated with a logit link function
 data(data7)
+Note: data were simulated with Coef[1]=1 (intercept), Coef[2]=0.8 (slope), phi=5
+# Also load the lineage-pair covariance matrix that arose from those simulations
 data(sim.cov.pairs)
 # Run the betareg function
-result1 = betareg_stan(des=data7[,1], y=data7[,2], cov=sim.cov.pairs, itnum=1000)
-# Observe posterior parameter estimates
-result1[[1]]
+result1 = betareg_stan(des=data7[,1], y=data7[,2], cov=sim.cov.pairs, iter=1000)
 # Fit the model again but this time without the covariance matrix
-result2 = betareg_stan(des=data7[,1], y=data7[,2], itnum=1000)
-# Observe posterior parameter estimates
+result2 = betareg_stan(des=data7[,1], y=data7[,2], iter=1000)
+# Fit the model a third time with the covariance matrix but now with a probit link function
+result3 = betareg_stan(des=data7[,1], y=data7[,2], cov=sim.cov.pairs, link="probit", iter=1000)
+# Compare posterior parameter estimates
+result1[[1]]
 result2[[1]]
-# Fit the model again with the covariance matrix but now with a probit link function
-result3 = betareg_stan(des=data7[,1], y=data7[,2], cov=sim.cov.pairs, link="probit", itnum=1000)
-# Observe posterior parameter estimates
 result3[[1]]
-# Compare the fit of the three models via loo
+# Compare the fit of the three models via leave-on-out (loo) cross validation.
 loo1 = suppressWarnings(loo::loo(result1[[2]]))
 loo2 = suppressWarnings(loo::loo(result2[[2]]))
 loo3 = suppressWarnings(loo::loo(result3[[2]]))
-loo_compare(loo1, loo2, loo3)
+loo::loo_compare(loo1, loo2, loo3)
 }
 }

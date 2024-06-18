@@ -63,11 +63,25 @@ model {
 }
 
 generated quantities {
-  vector[N] loglik = rep_vector(0.0, N); 
-  vector[N] mu = inv_logit(X * Coef + pair_effects);
+  vector[N] loglik; 
+  vector[N] mu; // Mean of the Beta distribution
+
+  // Calculate the predicted values based on the link function
+  if (link_choice == 1) {
+    mu = inv_logit(X * Coef + pair_effects);  // logit link
+  } else if (link_choice == 2) {
+    for (n in 1:N) {
+      mu[n] = normal_cdf(X[n] * Coef + pair_effects[n], 0, 1);  // probit link
+    }
+  } else if (link_choice == 3) {
+    mu = 1 - exp(-exp(X * Coef + pair_effects));  // cloglog link
+  } else if (link_choice == 4) {
+    mu = exp(-exp(-(X * Coef + pair_effects)));  // loglog link
+  }
 
   // Calculate log likelihood in a vectorized manner
   for (n in 1:N) {
     loglik[n] = beta_lpdf(Y[n] | mu[n] * phi, (1 - mu[n]) * phi);
   }
 }
+

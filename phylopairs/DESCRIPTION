@@ -2,7 +2,7 @@ Package: phylopairs
 Title: Phylogenetically informed comparative analyses of lineage-pair traits.
 Version: 0.1.0
 Authors@R: 
-    person("Sean", "A.", "S.", "Anderson", , "sean.as.anderson@gmail.com", role = c("aut", "cre"))
+    person("Sean A. S.", "Anderson", , "sean.as.anderson@gmail.com", role = c("aut", "cre"))
 Description: Facilitates the testing of causal relationships between continuous 
 	variables where the variables are attributes of lineage pairs, not of individual 
 	taxa. Examples of such attributes include the strength of reproductive isolation, 
